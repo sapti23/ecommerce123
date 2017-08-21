@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.Customerdao;
 import com.model.Customer;
@@ -11,6 +12,7 @@ import com.model.Customer;
 public class Customerserviceimpl implements Customerservice {
 	@Autowired
 private Customerdao customerDao;
+	@Transactional
 	public void saveCustomer(Customer customer) {
 	   customerDao.saveCustomer(customer);
 	}
